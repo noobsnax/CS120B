@@ -23,7 +23,7 @@ int main(void) {
 	if(tmpA == 0x00){
 		PORTC = 0x04; //all spaces are empty
 	} 
-	else if(tmpA == 0x01 || tmpA == 0x04 || tmpA == 0x08) {
+	else if(tmpA == 0x01 || tmpA == 0x02 || tmpA == 0x04 || tmpA == 0x08) {
 		PORTC = 0x03; //three spots are available
 	}
 	else if(tmpA == 0x03 || tmpA == 0x05 || tmpA == 0x06 || tmpA == 0x09 || tmpA == 0x0A || tmpA == 0x0C) {
