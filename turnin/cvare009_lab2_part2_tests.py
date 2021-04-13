@@ -78,7 +78,11 @@ tests = [ {'description': 'PINA 0x00 => PORTC: 0x04 (0000)',
     'steps': [ {'inputs': [('PINA',0x0F)],'iterations': 2}], # Set PIN to val then run one iteration
     'expected': [('PORTC',0x0F)],
     },
-    ]
+    {'description': 'PINA 0x80 => PORTC: 0x04 (0100)',
+    'steps': [ {'inputs': [('PINA',0x80)],'iterations': 2}], # Set PIN to val then run one iteration
+    'expected': [('PORTC',0x04)],
+    },
+	]
 
 
 
