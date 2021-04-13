@@ -1,7 +1,7 @@
 /*	Author: Charles Varela
  *  Partner(s) Name: 
  *	Lab Section:
- *	Assignment: Lab 2  Exercise 2
+ *	Assignment: Lab 2  Exercise 3
  *	Exercise Description: [optional - include for your own benefit]
  *
  *	I acknowledge all content contained herein, excluding template or example
@@ -20,7 +20,7 @@ int main(void) {
    /* Insert your solution below */
     while (1) {
 	tmpA = PINA;
-	if(tmpA == 0x00){
+	if(tmpA == 0x00||tempA==0x80){
 		PORTC = 0x04; //all spaces are empty
 	} 
 	else if(tmpA == 0x01 || tmpA == 0x02 || tmpA == 0x04 || tmpA == 0x08) {
