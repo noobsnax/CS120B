@@ -14,75 +14,19 @@
 # An example set of tests is shown below. It is important to note that these tests are not "unit tests" in 
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
-tests = [ {'description': 'PINA 0x00 => PORTC: 0x04 (0000)',
-    'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 2 } ],
-    'expected': [('PORTC',0x04)],
+tests = [ {'description': 'PINA: 64, PINB: 64, PINC: 64 => PORTD: 0x31',
+    'steps': [ {'inputs': [('PINA',64),('PINB',64),('PINC',64)], 'iterations': 2 } ],
+    'expected': [('PORTD',0x31)],
     },
-    {'description': 'PINA 0x01 => PORTC: 0x03 (0001)',
-    'steps': [ {'inputs': [('PINA',0x01)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x03)],
+     {'description': 'PINA: 0, PINB: 35, PINC: 85 => PORTD: 0x1E',
+    'steps': [ {'inputs': [('PINA',0),('PINB',35),('PINC',85)],'iterations': 2}], # Set PIN to val then run one iteration
+    'expected': [('PORTD',0x1E)],
   },
-    {'description': 'PINA 0x02 => PORTC: 0x03 (0010)',
-    'steps': [ {'inputs': [('PINA',0x02)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x03)]
+     {'description': 'PINA: 0, PINB: 56, PINC: 85 => PORTD: 0x22',
+    'steps': [ {'inputs': [('PINA',2),('PINB',56),('PINC',85)],'iterations': 2}], # Set PIN to val then run one iteration
+    'expected': [('PORTD',0x22)]
   },
-    {'description': 'PINA 0x03 => PORTC: 0x02 (0011)',
-    'steps': [ {'inputs': [('PINA',0x03)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x02)],
-  },
-    {'description': 'PINA 0x04 => PORTC: 0x03 (0100)',
-    'steps': [ {'inputs': [('PINA',0x04)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x03)],
-  },
-    {'description': 'PINA 0x05 => PORTC: 0x02 (0101)',
-    'steps': [ {'inputs': [('PINA',0x05)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x02)],
-  },
-    {'description': 'PINA 0x06 => PORTC: 0x02 (0110)',
-    'steps': [ {'inputs': [('PINA',0x06)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x02)],
-  },
-    {'description': 'PINA 0x07 => PORTC: 0x01 (0111)',
-    'steps': [ {'inputs': [('PINA',0x07)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x01)],
-  },
-    {'description': 'PINA 0x08 => PORTC: 0x03 (1000)',
-    'steps': [ {'inputs': [('PINA',0x08)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x03)],
-  },
-    {'description': 'PINA 0x09 => PORTC: 0x02 (1001)',
-    'steps': [ {'inputs': [('PINA',0x09)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x02)],
-    },
-    {'description': 'PINA 0x0A => PORTC: 0x02 (1010)',
-    'steps': [ {'inputs': [('PINA',0x0A)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x02)],
-    },
-    {'description': 'PINA 0x0B => PORTC: 0x01 (1011)',
-    'steps': [ {'inputs': [('PINA',0x0B)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x01)],
-    },
-    {'description': 'PINA 0x0C => PORTC: 0x02 (1100)',
-    'steps': [ {'inputs': [('PINA',0x0C)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x02)],
-    },
-    {'description': 'PINA 0x0D => PORTC: 0x01 (1101)',
-    'steps': [ {'inputs': [('PINA',0x0D)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x01)],
-    },
-    {'description': 'PINA 0x0E => PORTC: 0x01 (1110)',
-    'steps': [ {'inputs': [('PINA',0x0E)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x01)],
-    },
-    {'description': 'PINA 0x0F => PORTC: 0x03 (1111)',
-    'steps': [ {'inputs': [('PINA',0x0F)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x00)],
-    },
-    {'description': 'PINA 0x01 => PORTC: 0x03 (0001)',
-    'steps': [ {'inputs': [('PINA',0x01)],'iterations': 2}], # Set PIN to val then run one iteration
-    'expected': [('PORTC',0x03)],
-    },
-    ]
+  ]
 
 
 
@@ -101,5 +45,5 @@ tests = [ {'description': 'PINA 0x00 => PORTC: 0x04 (0000)',
 # Optionally you can add a set of "watch" variables these need to be global or static and may need
 # to be scoped at the function level (for static variables) if there are naming conflicts. The 
 # variables listed here will display everytime you hit (and stop at) a breakpoint
-watch = ['tmpA']
+watch = ['tmpFinal']
 
