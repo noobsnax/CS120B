@@ -1,6 +1,6 @@
 /*	Author: Charles Varela
  *  Partner(s) Name: 
- *	Lab Section:
+ *	Lab Section: 021
  *	Assignment: Lab 3  Exercise 2
  *	Exercise Description: [optional - include for your own benefit]
  *
